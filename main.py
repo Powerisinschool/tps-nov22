@@ -19,9 +19,9 @@ class CFG:
 def seed_everything(seed=42):
     random.seed(seed)
     os.environ['PYTHONHASHSEED'] = str(seed)
-    cupy.random.seed(seed)
+    np.random.seed(seed)
 
 seed_everything(CFG.seed)
 
-#labels = pd.read_csv(os.path.join(CFG.path, "train_labels.csv"))
-#submission = pd.read_csv(os.path.join(CFG.path, "sample_submission.csv"))
+labels = pd.read_csv(os.path.join(CFG.path, "train_labels.csv"))
+submission = pd.read_csv(os.path.join(CFG.path, "sample_submission.csv"))

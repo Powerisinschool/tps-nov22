@@ -28,5 +28,6 @@ jobs:
         run: kaggle competitions download -c tabular-playground-series-nov-2022
       - name: Process Data
         run: python extract.py
+      - run: ls
       - name: Run setup script
         run: python main.py
