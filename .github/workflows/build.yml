@@ -31,3 +31,4 @@ jobs:
       - run: ls
       - name: Run setup script
         run: python main.py
+      - run: ls
