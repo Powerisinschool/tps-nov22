@@ -32,3 +32,11 @@ jobs:
       - name: Run setup script
         run: python main.py
       - run: ls
+      - name: Deploy train and test data
+        run: bash ./deploy.sh
+
+      - name: deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
