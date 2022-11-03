@@ -1,3 +1,9 @@
+name: Build tps
+
+on:
+  push:
+    branches: [ main ]
+
 jobs:
   build:
     runs-on: ${{ matrix.os }}
