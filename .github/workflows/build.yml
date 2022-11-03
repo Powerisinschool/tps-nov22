@@ -21,3 +21,9 @@ jobs:
         run: python --version
       - name: Install requirements
         run: pip install -r requirements.txt
+      - name: Get kaggle data
+        run: kaggle competitions download -c tabular-playground-series-nov-2022
+      - name: Process Data
+        run: python extract.py
+      - name: Run setup script
+        run: python main.py
