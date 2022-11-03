@@ -21,9 +21,12 @@ jobs:
         run: python --version
       - name: Install requirements
         run: pip install -r requirements.txt
-      - run: mkdir ~/.kaggle
-      - name: Set Kaggle info
-        run: echo '{"username":"tolulopeolagunju","key":"6d984845849adeb9df398c12b3d36696"}' > ~/.kaggle/kaggle.json
+      - name: Set secrets as environmental variables
+        env:
+          kaggle_username: ${{ secrets.KAGGLE_USERNAME }}
+          kaggle_key: ${{ secrets.KAGGLE_KEY }}
+      - name: Config Kaggle info
+        run: bash ./kaggler.sh
       - name: Get kaggle data
         run: kaggle competitions download -c tabular-playground-series-nov-2022
       - name: Process Data
