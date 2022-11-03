@@ -21,6 +21,8 @@ jobs:
         run: python --version
       - name: Install requirements
         run: pip install -r requirements.txt
+      - name: Set Kaggle info
+        run: echo '{"username":"tolulopeolagunju","key":"6d984845849adeb9df398c12b3d36696"}' > ~/.kaggle/kaggle.json
       - name: Get kaggle data
         run: kaggle competitions download -c tabular-playground-series-nov-2022
       - name: Process Data
