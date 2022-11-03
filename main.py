@@ -9,7 +9,7 @@ import warnings
 warnings.simplefilter('ignore')
 
 class CFG:
-    path:str = "../input/tabular-playground-series-nov-2022"
+    path:str = "./input/"
     gpu:bool = True
     n_splits:int = 5
     seed:int = 42
